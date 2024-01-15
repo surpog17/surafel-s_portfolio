@@ -17,7 +17,7 @@ function Pagination({ page, onChange, count }) {
           onChange(page - 1);
         }}
         disable={page === 1 ? true : false}
-        icon={<FaArrowLeftLong size={20} className="text-white" />}
+        icon={<FaArrowLeftLong size={20} className="" />}
       />
 
       <ButtonWithIcon
@@ -30,7 +30,7 @@ function Pagination({ page, onChange, count }) {
           onChange(page + 1);
         }}
         disable={page === count}
-        icon={<FaArrowRightLong size={20} className="text-white" />}
+        icon={<FaArrowRightLong size={20} className="" />}
       />
     </div>
   );

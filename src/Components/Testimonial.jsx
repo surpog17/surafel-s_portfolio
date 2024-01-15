@@ -11,7 +11,7 @@ export default function Testimonial({
 }) {
   return (
     <div
-      className={`flex flex-col justify-center items-center mb-8 shadow-lg border-none ${
+      className={`flex flex-col justify-center items-center mb-8 shadow-lg border-none rounded-lg ${
         index % 2 == 0
           ? " bg-transparent border border-black text-black"
           : " bg-black border text-[#D4D4D8] border-black"

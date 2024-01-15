@@ -16,6 +16,14 @@ export default function index() {
       role: "Front End Developer",
     },
     {
+      projectImage:
+        "https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBBXpQAI=--8bf290b3b64bc749cc0dde62a3a4a55ab0e6e7af/avatar?v=1",
+      projectName: "Company 2",
+      description:
+        "At Youtube, I served as a  Software Engineer, focusing on the design and implementation of backend systems for the social media giant's dynamic platform. Working on projects that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.",
+      date: "March 2018 - November 2019",
+    },
+    {
       userImage:
         "https://s3-alpha-sig.figma.com/img/1d62/ed7e/0df463b96e189800544e8f44b32f4f3c?Expires=1706486400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EUwjQVaZqApUWWNrIH1PC-033ei92p42Zd8OHAGE8YB9gpE8ydwmqKfnWo1Lx1iFXeekFS67MShz-v9zbuJB2OzXpOM7rqMNzkS9cnH8nr5vPqkA9bYVQiGa1jhoHnz7~3eosu1GukoEp2BUItILIWK6FdhfOLSiQUc4oM33qUKJh6xQsGwdCwjVJEFb-dJQUcpPgSERjvn0OTMs4Eg~D4nDSApw-1zsq5Yz25Rwoed6duuqmLldC0ytNwQXrDalZH6FzWkcr~nn9wWw9muq-SSXqTwMR5UvAWmJOLDCZcFcD3~wMqb3WHEmZnNvHgPyfq~YjxcZRA4-iasI3Dlucg__",
       userName: "Company 2",
@@ -35,7 +43,7 @@ export default function index() {
     },
     {
       userImage:
-        "https://s3-alpha-sig.figma.com/img/1d62/ed7e/0df463b96e189800544e8f44b32f4f3c?Expires=1706486400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EUwjQVaZqApUWWNrIH1PC-033ei92p42Zd8OHAGE8YB9gpE8ydwmqKfnWo1Lx1iFXeekFS67MShz-v9zbuJB2OzXpOM7rqMNzkS9cnH8nr5vPqkA9bYVQiGa1jhoHnz7~3eosu1GukoEp2BUItILIWK6FdhfOLSiQUc4oM33qUKJh6xQsGwdCwjVJEFb-dJQUcpPgSERjvn0OTMs4Eg~D4nDSApw-1zsq5Yz25Rwoed6duuqmLldC0ytNwQXrDalZH6FzWkcr~nn9wWw9muq-SSXqTwMR5UvAWmJOLDCZcFcD3~wMqb3WHEmZnNvHgPyfq~YjxcZRA4-iasI3Dlucg__",
+        "https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBABqFgI=--0b066dc1ac77479d537719d8ddd68bbdd2608f47/avatar?v=1",
       userName: "Company 2",
       description:
         "At Youtube, I served as a  Software Engineer, focusing on the design and implementation of backend systems for the social media giant's dynamic platform. Working on users that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.",
@@ -76,7 +84,7 @@ export default function index() {
         </div>
 
         {count > 1 && (
-          <div className="flex justify-end mt-3">
+          <div className="flex justify-end mt-3 text-black">
             <Pagination count={count} page={page} onChange={handleChange} />
           </div>
         )}

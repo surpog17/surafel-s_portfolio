@@ -68,7 +68,7 @@ export default function index() {
           />
         ))}
         {count > 1 && (
-          <div className="flex justify-end mt-3">
+          <div className="flex justify-end mt-3 text-white">
             <Pagination count={count} page={page} onChange={handleChange} />
           </div>
         )}

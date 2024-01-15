@@ -8,6 +8,7 @@ import MySkills from "./Pages/MySkills";
 import MyExperience from "./Pages/MyExperience";
 import MyProjects from "./Pages/MyProjects";
 import MyTestimonial from "./Pages/MyTestimonial";
+import ContactMe from "./Pages/ContactUs";
 
 export default function App() {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -39,6 +40,7 @@ export default function App() {
       <AboutMe />
       <MyProjects />
       <MyTestimonial />
+      <ContactMe />
 
       {showScrollButton && (
         <button
