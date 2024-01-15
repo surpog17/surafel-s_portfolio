@@ -32,7 +32,7 @@ export default function Index() {
           to="AboutMe"
           className="flex items-center"
           smooth={true}
-          duration={500}
+          duration={1500}
         >
           About Me
         </Link>
@@ -44,7 +44,12 @@ export default function Index() {
         color="blue-gray"
         className="flex items-center gap-x-2 p-1  font-medium font-sora"
       >
-        <Link href="#" className="flex items-center">
+        <Link
+          href="#"
+          to="myskills"
+          smooth={true}
+          className="flex items-center"
+        >
           Skills
         </Link>
       </Typography>
@@ -54,8 +59,23 @@ export default function Index() {
         color="blue-gray"
         className="flex items-center gap-x-2 p-1  font-medium font-sora"
       >
+        <Link
+          href="#"
+          to="Experience"
+          smooth={true}
+          className="flex items-center"
+        >
+          Experience
+        </Link>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="flex items-center gap-x-2 p-1  font-medium font-sora"
+      >
         <Link href="#" className="flex items-center">
-          Portfolios
+          Projects
         </Link>
       </Typography>
       <Typography

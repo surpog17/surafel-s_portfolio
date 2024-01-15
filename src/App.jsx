@@ -6,6 +6,7 @@ import HomePage from "./Pages/Home";
 import AboutMe from "./Pages/AboutMe";
 import MySkills from "./Pages/MySkills";
 import MyExperience from "./Pages/MyExperience";
+import MyProjects from "./Pages/MyProjects";
 
 export default function App() {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -35,6 +36,7 @@ export default function App() {
       <MySkills />
       <MyExperience />
       <AboutMe />
+      <MyProjects />
 
       {showScrollButton && (
         <button

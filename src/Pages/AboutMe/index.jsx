@@ -12,7 +12,7 @@ export default function Index() {
           <img
             src={HomeImage}
             alt="Your Profile"
-            className="w-45 h-45 object-cover rounded-lg"
+            className="w-45 h-45 object-cover rounded-lg  border-2 border-black "
           />
         </div>
 
