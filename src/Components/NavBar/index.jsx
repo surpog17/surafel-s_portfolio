@@ -114,11 +114,14 @@ export default function Index() {
         <Typography
           as="a"
           href="#"
-          className="mr-4 cursor-pointer py-1.5  font-medium font-sora"
+          className="w-[6rem] h-[3rem] cursor-pointer py-1.5  font-medium font-sora"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
-          <img className="w-11" src={SKLogo} />
+          <img
+            className={hovered ? "w-[4rem]" : "w-[3rem]"}
+            src={hovered ? SKLogoName : SKLogo}
+          />
         </Typography>
         <div className="hidden lg:block">{navList}</div>
         <ButtonWithIcon
