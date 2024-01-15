@@ -1,32 +1,54 @@
-import React from "react";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaTimes,
+  FaTwitter,
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function SocialMedia() {
+  const [hovered, setHovered] = useState(false);
+  const [showTwitterIcon, setShowTwitterIcon] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowTwitterIcon(false);
+    }, 3000);
+
+    // Clear the timeout if the component is unmounted before 3 seconds
+    return () => clearTimeout(timer);
+  }, []);
   return (
-    <ul class="mx-auto flex list-inside justify-center lg:justify-center">
-      <a href="#!" class="px-2">
-        <FaFacebook
-          size={24}
-          className="transition duration-1000 ease-in-out  hover:text-blue-700"
-        />
+    <ul className=" flex list-inside justify-start lg:justify-start gap-5">
+      <a
+        href="#!"
+        className="px-2 rounded-md border-[3px] p-2 border-black bg-transparent hover:bg-black transition duration-1000 ease-in-out  hover:text-blue-700"
+      >
+        <FaLinkedin size={24} />
       </a>
-      <a href="#!" class="px-2">
-        <FaTwitter
-          size={24}
-          className="hover:text-blue-400 duration-300 ease-in-out"
-        />
+      <a
+        href="#!"
+        className="px-2 border-[3px] rounded-md p-2 border-black bg-transparent hover:bg-black transition duration-1000 ease-in-out  hover:text-blue-700"
+      >
+        <FaFacebook size={24} className="" />
       </a>
-      <a href="#!" class="px-2">
-        <FaInstagram
-          size={24}
-          className="hover:text-orange-400  duration-300 ease-in-out"
-        />
+      <a
+        href="#!"
+        className="px-2 border-[3px] rounded-md p-2 border-black bg-transparent hover:bg-black transition duration-1000 ease-in-out  hover:text-orange-400"
+      >
+        <FaInstagram size={24} />
       </a>
-      <a href="#!" class="px-2">
-        <FaLinkedin
-          size={24}
-          className="transition duration-300 ease-in-out  hover:text-blue-700"
-        />
+      <a
+        href="#!"
+        className={`px-2 border-[3px] rounded-md p-2 border-black bg-transparent hover:bg-black transition duration-1000 ease-in-out ${
+          !hovered ? "hover:text-blue-300" : "hover:text-white"
+        }`}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        {hovered ? <FaXTwitter size={24} /> : <FaTwitter size={24} />}
       </a>
     </ul>
   );

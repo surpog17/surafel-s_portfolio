@@ -8,9 +8,9 @@ const HomePage = () => {
   return (
     <div
       id="Home"
-      className="flex items-center justify-center min-h-screen bg-white gap-10"
+      className="flex items-center justify-center min-h-screen bg-white "
     >
-      <div className=" mx-auto flex items-center justify-between p-4 lg:w-3/4">
+      <div className=" mx-auto flex items-center justify-between p-4 lg:w-3/4 gap-10">
         {/* Text on the left */}
         <div className="text-black lg:w-1/2 grid gap-5">
           <h1 className="text-4xl  mb-4">
@@ -39,7 +39,7 @@ const HomePage = () => {
           <img
             src={HomeImage}
             alt="Your Image"
-            className="w-full h-full object-cover border border-b-5 rounded-bl-[50%] rounded-br-[50%]"
+            className="w-full h-full object-cover border-white border border-b-5 rounded-bl-[50%] rounded-br-[50%]"
           />
         </div>
       </div>

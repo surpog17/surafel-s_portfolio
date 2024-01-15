@@ -3,6 +3,8 @@ import { animateScroll as scroll } from "react-scroll";
 import { FaArrowUp } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import HomePage from "./Pages/Home";
+import AboutMe from "./Pages/AboutMe";
+import MySkills from "./Pages/MySkills";
 
 export default function App() {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -29,11 +31,14 @@ export default function App() {
     <div>
       <Navbar />
       <HomePage />
+      <MySkills />
+
+      <AboutMe />
       {showScrollButton && (
         <button
           title="Scroll UP"
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 bg-blue-500 hover:bg-blue-700 text-white p-2 rounded-full transition-opacity duration-300"
+          className="fixed bottom-4 right-4 border-2 border-black bg-transparent hover:bg-black text-black  hover:text-white p-2 rounded-full transition duration-1000 ease-in-out"
         >
           <FaArrowUp />
         </button>
