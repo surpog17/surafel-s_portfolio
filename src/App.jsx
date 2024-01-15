@@ -1,9 +1,8 @@
-import Navbars from "./Components/NavBar";
-import Home from "./Components/Home";
-import AboutMe from "./Components/AboutMe";
+import Navbar from "./Components/NavBar";
 import { animateScroll as scroll } from "react-scroll";
 import { FaArrowUp } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import HomePage from "./Pages/Home";
 
 export default function App() {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -28,9 +27,8 @@ export default function App() {
   }, []);
   return (
     <div>
-      <Navbars />
-      <Home />
-      <AboutMe />
+      <Navbar />
+      <HomePage />
       {showScrollButton && (
         <button
           title="Scroll UP"
