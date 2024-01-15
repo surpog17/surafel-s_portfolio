@@ -2,40 +2,40 @@ import React from "react";
 import Experience from "../../Components/Experience";
 import Pagination from "../../Components/Pagination";
 import usePagination from "../../Components/Paginator";
-import Projects from "../../Components/Projects";
+import Testimonial from "../../Components/Testimonial";
 
 export default function index() {
   const experiencesData = [
     {
-      projectImage:
+      userImage:
         "https://s3-alpha-sig.figma.com/img/1d62/ed7e/0df463b96e189800544e8f44b32f4f3c?Expires=1706486400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EUwjQVaZqApUWWNrIH1PC-033ei92p42Zd8OHAGE8YB9gpE8ydwmqKfnWo1Lx1iFXeekFS67MShz-v9zbuJB2OzXpOM7rqMNzkS9cnH8nr5vPqkA9bYVQiGa1jhoHnz7~3eosu1GukoEp2BUItILIWK6FdhfOLSiQUc4oM33qUKJh6xQsGwdCwjVJEFb-dJQUcpPgSERjvn0OTMs4Eg~D4nDSApw-1zsq5Yz25Rwoed6duuqmLldC0ytNwQXrDalZH6FzWkcr~nn9wWw9muq-SSXqTwMR5UvAWmJOLDCZcFcD3~wMqb3WHEmZnNvHgPyfq~YjxcZRA4-iasI3Dlucg__",
-      projectName: "Company 1",
+      userName: "Company 1",
       description:
         "As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google's core search algorithms. Collaborating with a dynamic team of engineers, I contributed to the enhancement of search accuracy and efficiency, optimizing user experiences for millions of users worldwide.",
       date: "January 2020 - December 2022",
     },
     {
-      projectImage:
+      userImage:
         "https://s3-alpha-sig.figma.com/img/1d62/ed7e/0df463b96e189800544e8f44b32f4f3c?Expires=1706486400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EUwjQVaZqApUWWNrIH1PC-033ei92p42Zd8OHAGE8YB9gpE8ydwmqKfnWo1Lx1iFXeekFS67MShz-v9zbuJB2OzXpOM7rqMNzkS9cnH8nr5vPqkA9bYVQiGa1jhoHnz7~3eosu1GukoEp2BUItILIWK6FdhfOLSiQUc4oM33qUKJh6xQsGwdCwjVJEFb-dJQUcpPgSERjvn0OTMs4Eg~D4nDSApw-1zsq5Yz25Rwoed6duuqmLldC0ytNwQXrDalZH6FzWkcr~nn9wWw9muq-SSXqTwMR5UvAWmJOLDCZcFcD3~wMqb3WHEmZnNvHgPyfq~YjxcZRA4-iasI3Dlucg__",
-      projectName: "Company 2",
+      userName: "Company 2",
       description:
-        "At Youtube, I served as a  Software Engineer, focusing on the design and implementation of backend systems for the social media giant's dynamic platform. Working on projects that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.",
+        "At Youtube, I served as a  Software Engineer, focusing on the design and implementation of backend systems for the social media giant's dynamic platform. Working on users that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.",
       date: "March 2018 - November 2019",
     },
     {
-      projectImage:
+      userImage:
         "https://s3-alpha-sig.figma.com/img/1d62/ed7e/0df463b96e189800544e8f44b32f4f3c?Expires=1706486400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EUwjQVaZqApUWWNrIH1PC-033ei92p42Zd8OHAGE8YB9gpE8ydwmqKfnWo1Lx1iFXeekFS67MShz-v9zbuJB2OzXpOM7rqMNzkS9cnH8nr5vPqkA9bYVQiGa1jhoHnz7~3eosu1GukoEp2BUItILIWK6FdhfOLSiQUc4oM33qUKJh6xQsGwdCwjVJEFb-dJQUcpPgSERjvn0OTMs4Eg~D4nDSApw-1zsq5Yz25Rwoed6duuqmLldC0ytNwQXrDalZH6FzWkcr~nn9wWw9muq-SSXqTwMR5UvAWmJOLDCZcFcD3~wMqb3WHEmZnNvHgPyfq~YjxcZRA4-iasI3Dlucg__",
-      projectName: "Company 2",
+      userName: "Company 2",
       description:
         "Led development initiatives and collaborated with cross-functional teams.",
       date: "March 2018 - November 2019",
     },
     {
-      projectImage:
+      userImage:
         "https://s3-alpha-sig.figma.com/img/1d62/ed7e/0df463b96e189800544e8f44b32f4f3c?Expires=1706486400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EUwjQVaZqApUWWNrIH1PC-033ei92p42Zd8OHAGE8YB9gpE8ydwmqKfnWo1Lx1iFXeekFS67MShz-v9zbuJB2OzXpOM7rqMNzkS9cnH8nr5vPqkA9bYVQiGa1jhoHnz7~3eosu1GukoEp2BUItILIWK6FdhfOLSiQUc4oM33qUKJh6xQsGwdCwjVJEFb-dJQUcpPgSERjvn0OTMs4Eg~D4nDSApw-1zsq5Yz25Rwoed6duuqmLldC0ytNwQXrDalZH6FzWkcr~nn9wWw9muq-SSXqTwMR5UvAWmJOLDCZcFcD3~wMqb3WHEmZnNvHgPyfq~YjxcZRA4-iasI3Dlucg__",
-      projectName: "Company 2",
+      userName: "Company 2",
       description:
-        "At Youtube, I served as a  Software Engineer, focusing on the design and implementation of backend systems for the social media giant's dynamic platform. Working on projects that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.",
+        "At Youtube, I served as a  Software Engineer, focusing on the design and implementation of backend systems for the social media giant's dynamic platform. Working on users that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.",
       date: "March 2018 - November 2019",
     },
   ];
@@ -48,21 +48,21 @@ export default function index() {
     currentData.jump(p);
   };
   return (
-    <div id="projects" className="bg-black min-h-screen px-[5rem]">
+    <div id="users" className="bg-white min-h-screen px-[5rem]">
       <div className="items-center justify-between p-4  gap-10">
-        <div className="text-white  grid gap-5">
+        <div className="text-black  grid gap-5">
           <h1 className="text-4xl  mb-4 text-center">
             <div className="py-4">
               <span className="font-light mr-4 w">My</span>
-              <span className="font-semibold mr-1">Projects</span>
+              <span className="font-semibold mr-1">Testimonial</span>
             </div>
           </h1>
         </div>
         {currentData?.currentData()?.map((experience, index) => (
-          <Projects
+          <Testimonial
             index={index}
-            projectImage={experience.projectImage}
-            projectName={experience.projectName}
+            userImage={experience.userImage}
+            userName={experience.userName}
             description={experience.description}
             date={experience.date}
           />

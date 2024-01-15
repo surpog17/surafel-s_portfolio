@@ -17,7 +17,7 @@ export default function Projects({
       <img
         src={projectImage}
         alt={projectName}
-        className="h-[15rem] w-[20rem] "
+        className="h-[20rem] w-[23rem] "
       />
       <div className=" w-full mr-4 grid gap-3">
         <p className="text-white text-4xl">0{(index += 1)}</p>

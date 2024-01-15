@@ -74,7 +74,12 @@ export default function Index() {
         color="blue-gray"
         className="flex items-center gap-x-2 p-1  font-medium font-sora"
       >
-        <Link href="#" className="flex items-center">
+        <Link
+          href="#"
+          to="projects"
+          smooth={true}
+          className="flex items-center"
+        >
           Projects
         </Link>
       </Typography>
