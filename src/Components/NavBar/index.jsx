@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Navbar,
   MobileNav,
@@ -9,10 +9,22 @@ import {
 import { Link, animateScroll as scroll } from "react-scroll";
 import ButtonWithIcon from "../Inputs/Button";
 import { MdOutlineFileDownload } from "react-icons/md";
+import SKLogo from "../../assets/PNG/sk-favicon-black.png";
+import SKLogoName from "../../assets/PNG/sk-logo-black-transparent.png";
 
 export default function Index() {
   const [openNav, setOpenNav] = React.useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [showTwitterIcon, setShowTwitterIcon] = useState(true);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowTwitterIcon(false);
+    }, 3000);
+
+    // Clear the timeout if the component is unmounted before 3 seconds
+    return () => clearTimeout(timer);
+  }, []);
   React.useEffect(() => {
     window.addEventListener(
       "resize",
@@ -97,14 +109,16 @@ export default function Index() {
   );
 
   return (
-    <Navbar className="bg-white text-black  w-screen-xl px-4 py-2 lg:px-8 lg:py-4">
+    <Navbar className="bg-white text-black  w-screen-xl px-4 py-0 border-none lg:px-8 lg:py-4">
       <div className="container mx-auto flex items-center justify-evenly text-blue-gray-900">
         <Typography
           as="a"
           href="#"
           className="mr-4 cursor-pointer py-1.5  font-medium font-sora"
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
         >
-          LOGO
+          <img className="w-11" src={SKLogo} />
         </Typography>
         <div className="hidden lg:block">{navList}</div>
         <ButtonWithIcon

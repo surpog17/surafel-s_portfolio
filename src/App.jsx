@@ -9,6 +9,7 @@ import MyExperience from "./Pages/MyExperience";
 import MyProjects from "./Pages/MyProjects";
 import MyTestimonial from "./Pages/MyTestimonial";
 import ContactMe from "./Pages/ContactUs";
+import Footer from "./Components/Footer";
 
 export default function App() {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -51,6 +52,7 @@ export default function App() {
           <FaArrowUp />
         </button>
       )}
+      <Footer />
     </div>
   );
 }
