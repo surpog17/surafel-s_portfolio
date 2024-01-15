@@ -8,11 +8,12 @@ export default function index() {
   const experiencesData = [
     {
       userImage:
-        "https://s3-alpha-sig.figma.com/img/1d62/ed7e/0df463b96e189800544e8f44b32f4f3c?Expires=1706486400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EUwjQVaZqApUWWNrIH1PC-033ei92p42Zd8OHAGE8YB9gpE8ydwmqKfnWo1Lx1iFXeekFS67MShz-v9zbuJB2OzXpOM7rqMNzkS9cnH8nr5vPqkA9bYVQiGa1jhoHnz7~3eosu1GukoEp2BUItILIWK6FdhfOLSiQUc4oM33qUKJh6xQsGwdCwjVJEFb-dJQUcpPgSERjvn0OTMs4Eg~D4nDSApw-1zsq5Yz25Rwoed6duuqmLldC0ytNwQXrDalZH6FzWkcr~nn9wWw9muq-SSXqTwMR5UvAWmJOLDCZcFcD3~wMqb3WHEmZnNvHgPyfq~YjxcZRA4-iasI3Dlucg__",
+        "https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBLHxOQI=--67523325bed7732d9eb55e07eca29d87c3009b6b/avatar?v=1",
       userName: "Company 1",
       description:
         "As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google's core search algorithms. Collaborating with a dynamic team of engineers, I contributed to the enhancement of search accuracy and efficiency, optimizing user experiences for millions of users worldwide.",
       date: "January 2020 - December 2022",
+      role: "Front End Developer",
     },
     {
       userImage:
@@ -21,6 +22,7 @@ export default function index() {
       description:
         "At Youtube, I served as a  Software Engineer, focusing on the design and implementation of backend systems for the social media giant's dynamic platform. Working on users that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.",
       date: "March 2018 - November 2019",
+      role: "Front End Developer",
     },
     {
       userImage:
@@ -29,6 +31,7 @@ export default function index() {
       description:
         "Led development initiatives and collaborated with cross-functional teams.",
       date: "March 2018 - November 2019",
+      role: "Front End Developer",
     },
     {
       userImage:
@@ -37,6 +40,7 @@ export default function index() {
       description:
         "At Youtube, I served as a  Software Engineer, focusing on the design and implementation of backend systems for the social media giant's dynamic platform. Working on users that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.",
       date: "March 2018 - November 2019",
+      role: "Front End Developer",
     },
   ];
   let [page, setPage] = React.useState(1);
@@ -58,15 +62,19 @@ export default function index() {
             </div>
           </h1>
         </div>
-        {currentData?.currentData()?.map((experience, index) => (
-          <Testimonial
-            index={index}
-            userImage={experience.userImage}
-            userName={experience.userName}
-            description={experience.description}
-            date={experience.date}
-          />
-        ))}
+        <div className="testimonial">
+          {currentData?.currentData()?.map((experience, index) => (
+            <Testimonial
+              index={index}
+              userImage={experience.userImage}
+              userName={experience.userName}
+              description={experience.description}
+              date={experience.date}
+              role={experience.role}
+            />
+          ))}
+        </div>
+
         {count > 1 && (
           <div className="flex justify-end mt-3">
             <Pagination count={count} page={page} onChange={handleChange} />
