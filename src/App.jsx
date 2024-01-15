@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import HomePage from "./Pages/Home";
 import AboutMe from "./Pages/AboutMe";
 import MySkills from "./Pages/MySkills";
+import MyExperience from "./Pages/MyExperience";
 
 export default function App() {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -32,13 +33,14 @@ export default function App() {
       <Navbar />
       <HomePage />
       <MySkills />
-
+      <MyExperience />
       <AboutMe />
+
       {showScrollButton && (
         <button
           title="Scroll UP"
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 border-2 border-black bg-transparent hover:bg-black text-black  hover:text-white p-2 rounded-full transition duration-1000 ease-in-out"
+          className="fixed bottom-4 right-4 border-2 border-black bg-transparent hover:bg-black text-black  hover:text-white p-2 rounded-full transition duration-1000 ease-in-out mix-blend-lighten	"
         >
           <FaArrowUp />
         </button>
