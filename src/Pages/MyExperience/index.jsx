@@ -5,7 +5,34 @@ import usePagination from "../../Components/Paginator";
 
 export default function ExperiencePage() {
   const experiencesData = [
-    // Your experience data here
+    {
+      companyImage: "https://ienetworks.co/pms/images/logos.png",
+      companyName: "Company 1",
+      description:
+        "As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google's core search algorithms. Collaborating with a dynamic team of engineers, I contributed to the enhancement of search accuracy and efficiency, optimizing user experiences for millions of users worldwide.",
+      date: "January 2020 - December 2022",
+    },
+    {
+      companyImage: "https://ienetworks.co/pms/images/logos.png",
+      companyName: "Company 2",
+      description:
+        "At Youtube, I served as a  Software Engineer, focusing on the design and implementation of backend systems for the social media giant's dynamic platform. Working on projects that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.",
+      date: "March 2018 - November 2019",
+    },
+    {
+      companyImage: "https://ienetworks.co/pms/images/logos.png",
+      companyName: "Company 2",
+      description:
+        "Led development initiatives and collaborated with cross-functional teams.",
+      date: "March 2018 - November 2019",
+    },
+    {
+      companyImage: "https://ienetworks.co/pms/images/logos.png",
+      companyName: "Company 2",
+      description:
+        "At Youtube, I served as a  Software Engineer, focusing on the design and implementation of backend systems for the social media giant's dynamic platform. Working on projects that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.",
+      date: "March 2018 - November 2019",
+    },
   ];
 
   let [page, setPage] = React.useState(1);
@@ -19,8 +46,11 @@ export default function ExperiencePage() {
   };
 
   return (
-    <div id="Experience" className="bg-black min-h-screen px-[5rem]">
-      <div className="items-center justify-between p-4 gap-10">
+    <div
+      id="Experience"
+      className="bg-black min-h-screen px-5 sm:px-10 md:px-20 lg:px-32 xl:px-48"
+    >
+      <div className="flex flex-col items-center justify-between p-4 gap-10">
         <div className="text-white grid gap-5">
           <h1 className="text-4xl mb-4 text-center">
             <div className="py-4">
