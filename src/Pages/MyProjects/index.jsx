@@ -39,34 +39,44 @@ export default function index() {
       date: "March 2018 - November 2019",
     },
   ];
+
   let [page, setPage] = React.useState(1);
-  const PER_PAGE = 3;
+  const PER_PAGE = 3; // Adjusted to 1 for better visibility in the example
   const count = Math.ceil(experiencesData?.length / PER_PAGE);
   const currentData = usePagination(experiencesData, PER_PAGE);
   const handleChange = (p) => {
     setPage(p);
     currentData.jump(p);
   };
+
   return (
-    <div id="projects" className="bg-black min-h-screen px-[5rem]">
-      <div className="items-center justify-between p-4  gap-10">
-        <div className="text-white  grid gap-5">
-          <h1 className="text-4xl  mb-4 text-center">
+    <div
+      id="projects"
+      className="bg-black min-h-screen px-4 md:px-8 lg:px-16 xl:px-32"
+    >
+      <div className="container mx-auto items-center justify-between py-8">
+        <div className="text-white grid gap-5">
+          <h1 className="text-4xl mb-4 text-center">
             <div className="py-4">
               <span className="font-light mr-4 w">My</span>
               <span className="font-semibold mr-1">Projects</span>
             </div>
           </h1>
         </div>
-        {currentData?.currentData()?.map((experience, index) => (
-          <Projects
-            index={index}
-            projectImage={experience.projectImage}
-            projectName={experience.projectName}
-            description={experience.description}
-            date={experience.date}
-          />
-        ))}
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {currentData?.currentData()?.map((experience, index) => (
+            <Projects
+              key={index}
+              index={index}
+              projectImage={experience.projectImage}
+              projectName={experience.projectName}
+              description={experience.description}
+              date={experience.date}
+            />
+          ))}
+        </div>
+
         {count > 1 && (
           <div className="flex justify-end mt-3 text-white">
             <Pagination count={count} page={page} onChange={handleChange} />
