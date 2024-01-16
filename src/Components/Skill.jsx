@@ -22,7 +22,7 @@ export default function Skill({ icon, title = "title" }) {
   }, []);
   return (
     <ul className=" justify-start lg:justify-start items-center ">
-      <div className=" flex flex-col justify-center items-center w-[170px] h-[170px] rounded-md border-[3px]  border-black bg-transparent hover:bg-black transition duration-1000 ease-in-out  hover:text-white">
+      <div className=" flex flex-col justify-center items-center p-4 md:w-[170px] md:h-[170px] rounded-md border-[3px]  border-black bg-transparent hover:bg-black transition duration-1000 ease-in-out  hover:text-white">
         <div className="flex justify-center  text-3xl "> {icon}</div>
         <div className="pt-5 text-xl text-center"> {title}</div>
       </div>
