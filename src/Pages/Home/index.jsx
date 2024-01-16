@@ -10,18 +10,18 @@ const HomePage = () => {
       id="Home"
       className="flex items-center justify-center min-h-screen bg-white "
     >
-      <div className=" mx-auto flex items-center justify-between p-4 lg:w-3/4 gap-10">
+      <div className="mx-auto flex flex-col-reverse lg:flex-row items-center justify-between p-4 lg:w-3/4 gap-10">
         {/* Text on the left */}
-        <div className="text-black lg:w-1/2 grid gap-5">
-          <h1 className="text-4xl  mb-4">
+        <div className="text-black lg:w-1/2 lg:pr-8 grid gap-5">
+          <h1 className="text-4xl mb-4">
             <div className="py-4">
-              <span className="font-light mr-4">Hello,I'm</span>
+              <span className="font-light mr-4">Hello, I'm</span>
               <span className="font-bold">Surafel Kifle.</span>
             </div>
             <TypeAnimation
               sequence={[
                 `A Front-end Developer.`,
-                ` A Back-end Developer.`,
+                `A Back-end Developer.`,
                 `Experienced in DevOps practices.`,
               ]}
               wrapper="div"
@@ -29,7 +29,7 @@ const HomePage = () => {
             ></TypeAnimation>
           </h1>
           <p className="text-lg font-light text-gray-600">
-            a passionate frontend developer with a flair for creating engaging
+            A passionate frontend developer with a flair for creating engaging
             and intuitive user experiences. I thrive on turning ideas into
             beautifully crafted, responsive web applications.
           </p>

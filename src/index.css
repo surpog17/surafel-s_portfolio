@@ -2,19 +2,38 @@
 body{
     font-family: 'Sora', sans-serif;
 }
-.skills{
+/* .skills{
     display: grid;
     grid-template-columns: 200px 200px 200px 200px 200px;
     gap: 30px;
     align-content: space-evenly;
-}
+} */
 .testimonial{
     display: grid;
     grid-template-columns: 31% 31% 31% ;
     gap: 30px;
     align-content: space-evenly;
 }
-
+.skills {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr)); 
+    gap: 20px;
+    align-content: space-evenly;
+  }
+  
+  /* Media query for larger screens */
+  @media (min-width: 768px) {
+    .skills {
+      grid-template-columns: repeat(3, minmax(150px, 1fr));
+    }
+  }
+  
+  /* Media query for even larger screens */
+  @media (min-width: 1024px) {
+    .skills {
+      grid-template-columns: repeat(5, minmax(150px, 1fr));
+    }
+  }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
