@@ -38,7 +38,7 @@ export default function index() {
               <span className="font-semibold mr-1">Skills</span>
             </div>
           </h1>
-          <div className="skills grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="skills grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {skillsData?.map((item, index) => (
               <Skill key={index} icon={item.icon} title={item.title} />
             ))}

@@ -42,12 +42,11 @@ export default function App() {
       <MyProjects />
       <MyTestimonial />
       <ContactMe />
-
       {showScrollButton && (
         <button
           title="Scroll UP"
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 border-2 border-black bg-transparent hover:bg-black text-black  hover:text-white p-2 rounded-full transition duration-1000 ease-in-out mix-blend-lighten	"
+          className="fixed bottom-4 right-4 border-2 border-black bg-transparent hover:bg-black text-black  hover:text-white p-2 rounded-full transition duration-1000 ease-in-out mix-blend-lighten z-[1]	"
         >
           <FaArrowUp />
         </button>

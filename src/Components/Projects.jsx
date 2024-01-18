@@ -13,7 +13,11 @@ export default function Projects({
       // className={`flex items-center mb-8 ${
       //   index % 2 == 0 ? " flex-row" : " flex-row-reverse"
       // }  py-5 px-5 gap-14`}
-      className={`flex flex-col-reverse md:flex-row items-center mb-8 px-0 py-5 md:px-5 gap-14`}
+      className={
+        index % 2 == 0
+          ? `flex flex-col-reverse md:flex-row items-center mb-8 px-0 py-5 md:px-5 gap-14`
+          : "flex flex-col-reverse md:flex-row-reverse items-center mb-8 px-0 py-5 md:px-5 gap-14"
+      }
     >
       <div className="w-full md:w-1/2 grid gap-3">
         <p className="text-white text-4xl">0{(index += 1)}</p>
