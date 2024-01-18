@@ -1,9 +1,10 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Experience from "../../Components/Experience";
 import Pagination from "../../Components/Pagination";
 import usePagination from "../../Components/Paginator";
 
-export default function ExperiencePage() {
+const ExperiencePage = () => {
   const experiencesData = [
     {
       companyImage: "https://ienetworks.co/pms/images/logos.png",
@@ -34,6 +35,7 @@ export default function ExperiencePage() {
       date: "March 2018 - November 2019",
     },
   ];
+
   let [page, setPage] = React.useState(1);
   const PER_PAGE = 3;
   const count = Math.ceil(experiencesData?.length / PER_PAGE);
@@ -44,35 +46,60 @@ export default function ExperiencePage() {
     currentData.jump(p);
   };
 
+  const containerVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { staggerChildren: 0.3 } },
+  };
+
+  const experienceVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+  };
+
   return (
-    <div id="Experience" className="bg-black min-h-screen px-[5rem]">
+    <motion.div
+      id="Experience"
+      className="bg-black min-h-screen px-[5rem]"
+      initial="initial"
+      animate="animate"
+      variants={containerVariants}
+    >
       <div className="items-center justify-between p-4 gap-10">
-        <div className="text-white grid gap-5">
+        <motion.div
+          className="text-white grid gap-5"
+          variants={experienceVariants}
+        >
           <h1 className="text-4xl mb-4 text-center">
             <div className="py-4">
               <span className="font-light mr-4">My</span>
               <span className="font-semibold mr-1">Experience</span>
             </div>
           </h1>
-        </div>
+        </motion.div>
 
         {currentData?.currentData()?.map((experience, index) => (
-          <Experience
-            key={index}
-            index={index}
-            companyImage={experience.companyImage}
-            companyName={experience.companyName}
-            description={experience.description}
-            date={experience.date}
-          />
+          <motion.div key={index} variants={experienceVariants}>
+            <Experience
+              index={index}
+              companyImage={experience.companyImage}
+              companyName={experience.companyName}
+              description={experience.description}
+              date={experience.date}
+            />
+          </motion.div>
         ))}
 
         {count > 1 && (
-          <div className="flex justify-end mt-3">
+          <motion.div
+            className="flex justify-end mt-3"
+            variants={experienceVariants}
+          >
             <Pagination count={count} page={page} onChange={handleChange} />
-          </div>
+          </motion.div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
-}
+};
+
+export default ExperiencePage;
