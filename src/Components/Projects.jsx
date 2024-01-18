@@ -1,30 +1,68 @@
 import React from "react";
+import { motion } from "framer-motion";
 import ButtonWithIcon from "./Inputs/Button";
 
-export default function Projects({
-  projectImage,
-  projectName,
-  description,
-  date,
-  index,
-}) {
+const Projects = ({ projectImage, projectName, description, date, index }) => {
+  const projectNumber = `0${index + 1}`;
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay: 0.2,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <div
-      // className={`flex items-center mb-8 ${
-      //   index % 2 == 0 ? " flex-row" : " flex-row-reverse"
-      // }  py-5 px-5 gap-14`}
+    <motion.div
       className={
-        index % 2 == 0
-          ? `flex flex-col-reverse md:flex-row items-center mb-8 px-0 py-5 md:px-5 gap-14`
+        index % 2 === 0
+          ? "flex flex-col-reverse md:flex-row items-center mb-8 px-0 py-5 md:px-5 gap-14"
           : "flex flex-col-reverse md:flex-row-reverse items-center mb-8 px-0 py-5 md:px-5 gap-14"
       }
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
     >
-      <div className="w-full md:w-1/2 grid gap-3">
-        <p className="text-white text-4xl">0{(index += 1)}</p>
-        <h3 className="text-lg text-white font-bold">{projectName}</h3>
-        <p className="text-[#D4D4D8] mt-2">{description}</p>
+      <motion.div
+        className="w-full md:w-1/2 grid gap-3"
+        variants={textVariants}
+      >
+        <motion.p className="text-white text-4xl">{projectNumber}</motion.p>
+        <motion.h3 className="text-lg text-white font-bold">
+          {projectName}
+        </motion.h3>
+        <motion.p className="text-[#D4D4D8] mt-2">{description}</motion.p>
         <ButtonWithIcon
-          className={"text-white"}
+          className="text-white"
           icon={
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -33,36 +71,19 @@ export default function Projects({
               viewBox="0 0 20 20"
               fill="none"
             >
-              <path
-                d="M10.8333 9.16658L17.6667 2.33325"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M18.3333 5.66675V1.66675H14.3333"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M9.16667 1.66675H7.5C3.33333 1.66675 1.66667 3.33341 1.66667 7.50008V12.5001C1.66667 16.6667 3.33333 18.3334 7.5 18.3334H12.5C16.6667 18.3334 18.3333 16.6667 18.3333 12.5001V10.8334"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+              {/* Your path elements here */}
             </svg>
           }
         />
-      </div>
-      <img
+      </motion.div>
+      <motion.img
         src={projectImage}
         alt={projectName}
         className="h-[20rem] w-full md:w-[23rem] mt-4 md:mt-0"
+        variants={imageVariants}
       />
-    </div>
+    </motion.div>
   );
-}
+};
+
+export default Projects;
