@@ -1,18 +1,31 @@
-// HomePage.js
 import React from "react";
+import { motion } from "framer-motion";
 import HomeImage from "../../assets/PNG/surafelmain.png";
 import { TypeAnimation } from "react-type-animation";
 import SocialMedia from "./SocialMedia";
 
 const HomePage = () => {
+  const variants = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+  };
+
   return (
-    <div
+    <motion.div
       id="Home"
-      className="flex items-center justify-center min-h-screen bg-white "
+      className="flex items-center justify-center min-h-screen bg-white"
+      initial="initial"
+      animate="animate"
+      variants={variants}
     >
       <div className="mx-auto flex flex-col-reverse lg:flex-row items-center justify-between p-4 lg:w-3/4 gap-10">
         {/* Text on the left */}
-        <div className="text-black lg:w-1/2 lg:pr-8 grid gap-5">
+        <motion.div
+          className={`text-black lg:w-1/2 lg:pr-8 grid gap-5`}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2 }}
+        >
           <h1 className="text-4xl mb-4">
             <div className="py-4">
               <span className="font-light mr-4">Hello, I'm</span>
@@ -34,16 +47,21 @@ const HomePage = () => {
             beautifully crafted, responsive web applications.
           </p>
           <SocialMedia />
-        </div>
-        <div className="lg:w-1/2">
+        </motion.div>
+        <motion.div
+          className="lg:w-1/2"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2 }}
+        >
           <img
             src={HomeImage}
-            alt="Your Image"
+            alt="Surafel Kifle"
             className="w-full h-full object-cover border-white border border-b-5 rounded-bl-[50%] rounded-br-[50%]"
           />
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
