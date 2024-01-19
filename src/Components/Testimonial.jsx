@@ -1,6 +1,7 @@
 import React from "react";
 import ButtonWithIcon from "./Inputs/Button";
 import { FaQuoteRight } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function Testimonial({
   userImage,
@@ -9,8 +10,24 @@ export default function Testimonial({
   role,
   index,
 }) {
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay: 0.2,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <div
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
       className={`flex flex-col justify-center items-center mb-8 shadow-lg border-none rounded-lg ${
         index % 2 == 0
           ? " bg-transparent border border-black text-black"
@@ -38,6 +55,6 @@ export default function Testimonial({
         <h3 className="text-lg  font-bold text-center">{userName}</h3>
         <h3 className="text-lg font-bold text-center">{role}</h3>
       </div>
-    </div>
+    </motion.div>
   );
 }
