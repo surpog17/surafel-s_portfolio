@@ -41,6 +41,8 @@ export default function App() {
       <AboutMe />
       <MyProjects />
       <MyTestimonial />
+      <ContactMe />
+
       {showScrollButton && (
         <button
           title="Scroll UP"
