@@ -46,7 +46,7 @@ export default function App() {
         <button
           title="Scroll UP"
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 border-2 border-black bg-transparent hover:bg-black text-black hover:text-white p-2 rounded-full transition duration-1000 ease-in-out z-[1]"
+          className="fixed bottom-4 right-4 border-2 border-black bg-transparent hover:bg-black text-black hover:text-white p-2 rounded-full transition duration-1000 ease-in-out z-10"
           style={{ mixBlendMode: "screen" }}
         >
           <FaArrowUp />
