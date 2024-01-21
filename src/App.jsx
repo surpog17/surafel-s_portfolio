@@ -40,7 +40,6 @@ export default function App() {
       <MyExperience />
       <AboutMe />
       <MyProjects />
-      <MyTestimonial />
       <ContactMe />
 
       {showScrollButton && (
