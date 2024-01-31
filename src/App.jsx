@@ -41,7 +41,7 @@ export default function App() {
   return (
     <div>
       <Navbar />
-
+      <HomePage />
       <MySkills />
       <MyExperience />
       <AboutMe />
