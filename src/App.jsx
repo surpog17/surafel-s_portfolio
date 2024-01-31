@@ -32,6 +32,12 @@ export default function App() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const [isNightMode, setNightMode] = useState(false);
+
+  const toggleMode = () => {
+    setNightMode(!isNightMode);
+    setTheme(isNightMode ? "light" : "dark"); // Adjust this based on your theme handling logic
+  };
   return (
     <div>
       <Navbar />
